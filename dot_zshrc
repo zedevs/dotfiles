@@ -1,0 +1,4 @@
+source $(brew --prefix nvm)/nvm.sh
+export EDITOR=nvim
+# changed
+export PATH="$(brew --prefix libpq)/bin:$PATH"
