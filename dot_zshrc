@@ -1,4 +1,105 @@
-source $(brew --prefix nvm)/nvm.sh
-export EDITOR=nvim
-# changed
+# !TODO try lsd, bat, delta alternatives
+# !TODO try forgit
+
+#-------------------------------------#
+#               GEMERAL               #
+#-------------------------------------#
+export EDITOR=zed
+export HISTFILE=$HOME/.cache/.zsh_history
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000000
+setopt extended_history          # write the history file in the ":start:elapsed;command" format.
+setopt hist_find_no_dups         # do not display a line previously found.
+setopt inc_append_history        # write to the history file immediately, not when the shell exits.
+setopt hist_ignore_dups          # don't record an entry that was just recorded again.
+setopt globdots                  # become aware of .files
+DIRSTACKSIZE=16                  # sets the maximum number of directories to keep in the stack
+setopt autocd                    # change directories by typing the directory name
+setopt cdable_vars               # use named variables containing directory paths as arguments for cd
+setopt auto_pushd                # adds directories to the directory stack when using cd (easily navigate back and forth (with `cd`) also list the stack with `dirs`)
+setopt pushd_ignore_dups         # don't push dups to the stack
+setopt interactivecomments       # ignore lines prefixed with '#'.
+setopt noflowcontrol             # disables the use of Ctrl+S (stop output) and Ctrl+Q (resume output) for flow control in the terminal.
+
+
+#-------------------------------------#
+#                PATHS                #
+#-------------------------------------#
+
 export PATH="$(brew --prefix libpq)/bin:$PATH"
+export PATH=$HOME/.bin:$PATH
+
+#-------------------------------------#
+#           PLUGIN SPECIFIC           #
+#-------------------------------------#
+export FZF_COMPLETION_TRIGGER='!!'
+export BAT_THEME='TwoDark'
+
+#-------------------------------------#
+#               ALIASES               #
+#-------------------------------------#
+#----- general -----#
+alias reload='source ~/.zshrc'
+alias codi='code-insiders'
+alias hosts='sudo nvim /private/etc/hosts'
+alias md='mkdir -p'
+alias svim='sudo nvim'
+alias l='lsd'
+alias ll='lsd -la --blocks permission,date,size,name --date relative --size short'
+alias la=ll
+alias cat='bat --paging=never'
+alias less='bat'
+#----- git -----#
+alias g='git'
+alias ga='git add'
+alias gp='git push'
+alias gs='git status'
+alias gcm='git commit -m'
+alias grm='git rebase origin/master'
+alias grim='git rebase -i origin/master'
+alias grc='git rebase --continue'
+alias gca='git commit --amend'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gl='git l'
+alias glp='git l -p'
+alias glg='git lg'
+
+#-------------------------------------#
+#    CLI LOADING AND COMPLETIONS      #
+#-------------------------------------#
+source $(brew --prefix nvm)/nvm.sh
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+source $(brew --prefix asdf)/libexec/asdf.sh
+
+#-------------------------------------#
+#              FUNCTIONS              #
+#-------------------------------------#
+
+function mkd() {
+    # Create a new directory and enter it
+	mkdir -p "$@" && cd "$_";
+}
+
+# # autoload nvmrc version
+# autoload -U add-zsh-hook
+# load-nvmrc() {
+#   local node_version="$(nvm version)"
+#   local nvmrc_path="$(nvm_find_nvmrc)"
+
+#   if [ -n "$nvmrc_path" ]; then
+#     local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+#     if [ "$nvmrc_node_version" = "N/A" ]; then
+#       nvm install
+#     elif [ "$nvmrc_node_version" != "$node_version" ]; then
+#       nvm use
+#     fi
+#   elif [ "$node_version" != "$(nvm version default)" ]; then
+#     echo "Reverting to nvm default version"
+#     nvm use default
+#   fi
+# }
+# add-zsh-hook chpwd load-nvmrc
+# load-nvmrc
+# # eof autoload nvmrc version

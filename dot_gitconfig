@@ -1,0 +1,39 @@
+[include]
+  path = .gitconfig.private
+[core]
+  whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  editor = /usr/bin/env nvim
+  pager = delta
+[interactive]
+  diffFilter = delta --color-only
+[alias]
+  ch = checkout
+  s = status
+  c = commit
+  ca = commit -am
+  l = log
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[push]
+  default = tracking
+  autoSetupRemote = true
+[branch]
+  autosetuprebase = always
+[rerere]
+	enabled = true
+[diff]
+	tool = smerge
+  colorMoved = default
+[difftool]
+	prompt = false
+[merge]
+	tool = opendiff
+[mergetool]
+	keepBackup = false
+[delta]
+    features = side-by-side line-numbers decorations
+    whitespace-error-style = 22 reverse
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
