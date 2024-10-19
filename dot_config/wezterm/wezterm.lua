@@ -18,7 +18,7 @@ config.font = wezterm.font({ family = 'Fira Code' })
 config.font_size = 15
 config.initial_cols = 180
 config.initial_rows = 60
-config.window_background_opacity = 0.8
+config.window_background_opacity = 0.9
 config.macos_window_background_blur = 20
 -- Removes the title bar, leaving only the tab bar
 config.window_decorations = 'RESIZE'
