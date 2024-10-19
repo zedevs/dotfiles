@@ -1,3 +1,6 @@
+## My dot files
+_Someday_ I will write a proper README.md
+
 #### Enable key repeat
 ```sh
 defaults write -g ApplePressAndHoldEnabled -bool false

@@ -1,8 +1,3 @@
-# !TODO try lsd, bat, delta alternatives
-# !TODO try forgit
-# !TODO zelij
-# https://github.com/rossmacarthur/sheldon
-
 #-------------------------------------#
 #               GEMERAL               #
 #-------------------------------------#
@@ -11,7 +6,8 @@ HISTFILE=$HOME/.cache/.zsh_history
 SAVEHIST=10000
 HISTSIZE=9999
 DIRSTACKSIZE=16                  # sets the maximum number of directories to keep in the stack
-setopt extended_history          # write the history file in the ":start:elapsed;command" format.
+autoload -U compinit             # Loads the completion system for use in Zsh.
+compinit                         # Initializes the Zsh completion system.setopt extended_history          # write the history file in the ":start:elapsed;command" format.
 setopt hist_find_no_dups         # do not display a line previously found.
 setopt inc_append_history        # write to the history file immediately, not when the shell exits.
 setopt hist_expire_dups_first
@@ -30,8 +26,8 @@ bindkey '^[[B' history-search-forward
 #-------------------------------------#
 #                PATHS                #
 #-------------------------------------#
-export PATH="$(brew --prefix libpq)/bin:$PATH"
 export PATH=$HOME/.bin:$PATH
+fpath=($(brew --prefix)/share/zsh/site-functions $fpath) # default completions for many packages
 
 #-------------------------------------#
 #           PLUGIN SPECIFIC           #
