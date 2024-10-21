@@ -13,3 +13,9 @@ chezmoi apply # to apply changes
 chezmoi edit # to edit dotfiles
 chezmoi cd # to navigate to chezmoi directory
 ```
+
+#### To checkout:
+
+- btop
+- neofetch
+- yazi

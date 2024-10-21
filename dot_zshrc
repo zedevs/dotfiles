@@ -23,6 +23,7 @@ setopt share_history             # share the command history among multiple Zsh 
 # completion using arrow keys (based on history)
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive completion
 #-------------------------------------#
 #                PATHS                #
 #-------------------------------------#
