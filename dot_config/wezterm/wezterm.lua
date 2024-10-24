@@ -3,7 +3,7 @@ local appearance = require 'appearance'
 
 local config = {
     set_environment_variables = {
-        EDITOR = 'zed',
+        EDITOR = 'cursor',
         PATH = '/opt/homebrew/bin:' .. os.getenv('PATH'),
         BAT_THEME = appearance.is_dark() and "Catppuccin-mocha" or "Catppuccin-latte",
     },
@@ -17,11 +17,17 @@ local config = {
     window_background_opacity = 0.9,
     macos_window_background_blur = 20,
     hide_tab_bar_if_only_one_tab = false,
-    tab_bar_at_bottom = true,
+    tab_bar_at_bottom = false,
     use_fancy_tab_bar = false,
+    window_padding = {
+        left = 10,
+        right = 10,
+        top = 10,
+        bottom = 10,
+    },
 
     -- Keys
-    leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 1500 },
+    leader = { key = 'a', mods = 'OPT', timeout_milliseconds = 1500 },
     keys = {
         -- Sends ESC + b and ESC + f sequence, which is used
         -- for telling your shell to jump back/forward.
@@ -35,6 +41,40 @@ local config = {
             mods = 'OPT',
             action = wezterm.action.SendString '\x1bf',
         },
+        -- Remapping to accomodate Aerospace ergonomics (capslock -> opt instead of ctrl)
+        {
+            key = 'd',
+            mods = 'OPT',
+            action = wezterm.action.SendKey {
+                key = 'd',
+                mods = 'CTRL',
+            },
+        },
+        {
+            key = 'r',
+            mods = 'OPT',
+            action = wezterm.action.SendKey {
+                key = 'r',
+                mods = 'CTRL',
+            },
+        },
+        {
+            key = 'e',
+            mods = 'OPT',
+            action = wezterm.action.SendKey {
+                key = 'e',
+                mods = 'CTRL',
+            },
+        },
+        {
+            key = 'c',
+            mods = 'OPT',
+            action = wezterm.action.SendKey {
+                key = 'c',
+                mods = 'CTRL',
+            },
+        },
+        -- Vim style pane and tab manipulation
         {
             mods = "LEADER",
             key = "c",
@@ -57,7 +97,7 @@ local config = {
         },
         {
             mods = "LEADER",
-            key = "|",
+            key = "\\",
             action = wezterm.action.SplitHorizontal { domain = "CurrentPaneDomain" }
         },
         {
@@ -105,6 +145,13 @@ local config = {
             key = "UpArrow",
             action = wezterm.action.AdjustPaneSize { "Up", 5 }
         },
+        -- Reload dotfiles (TODO: Just copies them, still need to be reloaded)
+        {
+            mods = 'LEADER',
+            key = 'r',
+            action = wezterm.action.RotatePanes 'CounterClockwise',
+        },
+        { key = 'R', mods = 'LEADER', action = wezterm.action.RotatePanes 'Clockwise' },
         {
             key = ',',
             mods = 'SUPER',
@@ -124,7 +171,7 @@ local config = {
     }
 }
 
-for i = 0, 9 do
+for i = 1, 9 do
     -- leader + number to activate that tab
     table.insert(config.keys, {
         key = tostring(i),

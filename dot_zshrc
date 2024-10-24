@@ -1,7 +1,7 @@
 #-------------------------------------#
 #               GEMERAL               #
 #-------------------------------------#
-EDITOR=zed
+EDITOR=cursor
 HISTFILE=$HOME/.cache/.zsh_history
 SAVEHIST=10000
 HISTSIZE=9999
