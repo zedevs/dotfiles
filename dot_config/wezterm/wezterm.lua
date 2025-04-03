@@ -13,6 +13,7 @@ local config = {
     line_height = 1.1,
     initial_cols = 180,
     initial_rows = 60,
+    scrollback_lines = 100000,
     window_decorations = 'RESIZE',
     window_background_opacity = 0.9,
     macos_window_background_blur = 20,
@@ -27,7 +28,7 @@ local config = {
     },
 
     -- Keys
-    leader = { key = 'a', mods = 'OPT', timeout_milliseconds = 1500 },
+    leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 1500 },
     keys = {
         -- Sends ESC + b and ESC + f sequence, which is used
         -- for telling your shell to jump back/forward.

@@ -3,8 +3,8 @@
 #-------------------------------------#
 EDITOR=cursor
 HISTFILE=$HOME/.cache/.zsh_history
-SAVEHIST=10000
-HISTSIZE=9999
+SAVEHIST=1000000
+HISTSIZE=999999
 DIRSTACKSIZE=16                  # sets the maximum number of directories to keep in the stack
 autoload -U compinit             # Loads the completion system for use in Zsh.
 compinit                         # Initializes the Zsh completion system.setopt extended_history          # write the history file in the ":start:elapsed;command" format.
