@@ -20,8 +20,7 @@ chezmoi edit # to edit dotfiles
 chezmoi cd # to navigate to chezmoi directory
 ```
 
-#### To checkout:
+#### To checkout
 
-- lazyvim
-- remap asdf row to control the terinal and qwerty to control windows
+- remap asdf row to control the terminal and qwerty to control windows
 - try starship
