@@ -22,5 +22,11 @@ chezmoi cd # to navigate to chezmoi directory
 
 #### To checkout
 
-- remap asdf row to control the terminal and qwerty to control windows
-- try starship
+- remap ctrl+a to control the terminal and 12345 to control windows
+  - maximise windows/left/right
+- invest in learning more about zellij??? Do I need zellij actually
+- max parity between cursor and neovim
+  - leader-e opens filethree
+  - leader-s splits windows
+- JetBrains type
+

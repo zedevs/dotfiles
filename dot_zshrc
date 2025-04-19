@@ -1,7 +1,7 @@
 #-------------------------------------#
 #               GEMERAL               #
 #-------------------------------------#
-EDITOR=cursor
+EDITOR=nvim
 HISTFILE=$HOME/.cache/.zsh_history
 SAVEHIST=1000000
 HISTSIZE=999999
