@@ -1,8 +1,10 @@
 {
   "extras": [
     "lazyvim.plugins.extras.ai.codeium",
+    "lazyvim.plugins.extras.coding.mini-surround",
     "lazyvim.plugins.extras.editor.harpoon2",
     "lazyvim.plugins.extras.editor.inc-rename",
+    "lazyvim.plugins.extras.formatting.prettier",
     "lazyvim.plugins.extras.lang.typescript",
     "lazyvim.plugins.extras.util.chezmoi",
     "lazyvim.plugins.extras.vscode"

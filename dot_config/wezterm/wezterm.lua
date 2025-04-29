@@ -4,13 +4,13 @@ local appearance = require("appearance")
 
 local config = {
 	set_environment_variables = {
-		EDITOR = "cursor",
+		EDITOR = "nvim",
 		PATH = "/opt/homebrew/bin:" .. os.getenv("PATH"),
 		BAT_THEME = appearance.is_dark() and "Catppuccin-mocha" or "Catppuccin-latte",
 	},
 	color_scheme = appearance.is_dark() and "Catppuccin Mocha" or "Catppuccin Frappe",
 	font = wezterm.font({ family = "JetBrains Mono" }),
-	font_size = 16,
+	font_size = 18,
 	line_height = 1.1,
 	initial_cols = 180,
 	initial_rows = 60,

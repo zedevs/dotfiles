@@ -8,7 +8,7 @@ vim.keymap.set("i", "jj", "<esc>", { silent = true, desc = "Escape insert mode" 
 -- remap jk to esc + save
 vim.keymap.set("i", "jk", "<esc>:w<cr>", { silent = false, desc = "Escape insert mode" })
 
-vim.keymap.set("n", "U", "<C-R>", { noremap = true, desc = "Redo last change" })
+vim.keymap.set({ "v", "n" }, "U", "<C-R>", { noremap = true, desc = "Redo last change" })
 vim.keymap.set("n", "Y", "y$", { noremap = true, desc = "Yank to end of line" })
 vim.keymap.set("n", "D", "d$", { noremap = true, desc = "Delete to end of line" })
 vim.keymap.set("n", "C", "c$", { noremap = true, desc = "Change to end of line" })

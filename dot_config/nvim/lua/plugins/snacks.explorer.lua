@@ -1,4 +1,19 @@
 return {
   "folke/snacks.nvim",
-  opts = { picker = { sources = { explorer = { layout = { layout = { position = "right" } } } } } },
+  opts = {
+    explorer = {
+      replace_netrw = true,
+      hidden = true,
+      ignored = true,
+    },
+    picker = {
+      hidden = true,
+      ignored = true,
+      sources = {
+        explorer = {
+          layout = { layout = { position = "right" } },
+        },
+      },
+    },
+  },
 }

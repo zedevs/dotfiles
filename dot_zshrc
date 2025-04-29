@@ -24,11 +24,13 @@ setopt share_history             # share the command history among multiple Zsh 
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive completion
+bindkey -e
 #-------------------------------------#
 #                PATHS                #
 #-------------------------------------#
 export PATH=$HOME/.bin:$PATH
 fpath=($(brew --prefix)/share/zsh/site-functions $fpath) # default completions for many packages
+export XDG_CONFIG_HOME="$HOME/.config" # sets default settings to ~/.config
 
 #-------------------------------------#
 #           PLUGIN SPECIFIC           #
@@ -48,6 +50,7 @@ alias la=ll
 alias cat='bat --paging=never'
 alias less='bat'
 #----- git -----#
+alias lg=lazygit
 alias g='git'
 alias ga='git add'
 alias gp='git push'
