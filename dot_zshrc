@@ -49,6 +49,7 @@ alias ll='lsd -la --blocks permission,date,size,name --date relative --size shor
 alias la=ll
 alias cat='bat --paging=never'
 alias less='bat'
+alias dots='cd ~/dev/dotfiles'
 #----- git -----#
 alias lg=lazygit
 alias g='git'
