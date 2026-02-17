@@ -87,3 +87,10 @@ function mkd() {
 }
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+#-------------------------------------#
+#          LOCAL/SENSITIVE            #
+#-------------------------------------#
+# Source local zshrc for sensitive information (API keys, tokens, etc.)
+# This file is not tracked by git
+[[ ! -f ~/.zshrc.local ]] || source ~/.zshrc.local
