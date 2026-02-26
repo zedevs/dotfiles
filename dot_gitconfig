@@ -37,3 +37,9 @@
     commit-decoration-style = bold yellow box ul
     file-style = bold yellow ul
     file-decoration-style = none
+[gpg]
+	format = ssh
+[user]
+	signingkey = /Users/zevst/.ssh/github.pub
+[commit]
+	gpgsign = true

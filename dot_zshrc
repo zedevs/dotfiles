@@ -28,7 +28,7 @@ bindkey -e
 #-------------------------------------#
 #                PATHS                #
 #-------------------------------------#
-export PATH=$HOME/.bin:$PATH
+export PATH=$HOME/.bin:$(brew --prefix libpq)/bin:$PATH
 fpath=($(brew --prefix)/share/zsh/site-functions $fpath) # default completions for many packages
 export XDG_CONFIG_HOME="$HOME/.config" # sets default settings to ~/.config
 
@@ -49,6 +49,7 @@ alias ll='lsd -la --blocks permission,date,size,name --date relative --size shor
 alias la=ll
 alias cat='bat --paging=never'
 alias less='bat'
+alias diff='delta'
 alias dots='cd ~/dev/dotfiles'
 #----- git -----#
 alias lg=lazygit
