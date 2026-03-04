@@ -1,19 +1,6 @@
 {
   "awsAuthRefresh": "saml2aws login --force --skip-prompt",
   "model": "global.anthropic.claude-opus-4-6-v1[1m]",
-  "hooks": {
-    "PostToolUse": [
-      {
-        "matcher": "Write|Edit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "FILE=$(jq -r '.tool_input.file_path // empty'); if [[ \"$FILE\" == *.ts || \"$FILE\" == *.tsx ]]; then npx prettier --write \"$FILE\" 2>/dev/null && npx eslint --fix \"$FILE\" 2>/dev/null; fi; exit 0"
-          }
-        ]
-      }
-    ]
-  },
   "statusLine": {
     "type": "command",
     "command": "npx -y @owloops/claude-powerline --style=powerline"
