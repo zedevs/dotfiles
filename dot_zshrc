@@ -6,6 +6,7 @@ HISTFILE=$HOME/.cache/.zsh_history
 SAVEHIST=1000000
 HISTSIZE=999999
 DIRSTACKSIZE=16                  # sets the maximum number of directories to keep in the stack
+fpath=("$(brew --prefix asdf)/share/zsh/site-functions" $fpath)
 autoload -U compinit             # Loads the completion system for use in Zsh.
 compinit                         # Initializes the Zsh completion system.setopt extended_history          # write the history file in the ":start:elapsed;command" format.
 setopt hist_find_no_dups         # do not display a line previously found.
@@ -73,7 +74,7 @@ alias glg='git lg'
 #-------------------------------------#
 source $(brew --prefix nvm)/nvm.sh
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
-source $(brew --prefix asdf)/libexec/asdf.sh
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
