@@ -107,7 +107,7 @@ chezmoi re-add ~/.zshrc
 Key tools installed:
 - **Version managers**: asdf, nvm, pyenv
 - **CLI tools**: bat, lsd, fzf, ripgrep, btop, tldr
-- **Dev tools**: neovim, git, docker-compose, dbmate
+- **Dev tools**: neovim, git, dbmate
 - **Terminal**: wezterm, zellij, powerlevel10k
 - **Editors**: cursor, sublime-merge (for git diffs)
 - **Window management**: aerospace (tiling WM), karabiner-elements

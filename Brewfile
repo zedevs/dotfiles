@@ -10,7 +10,6 @@ brew "btop"
 brew "chezmoi"
 brew "curl", link: true
 brew "dbmate"
-brew "docker-compose"
 brew "fzf"
 brew "git"
 brew "git-delta"
