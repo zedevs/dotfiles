@@ -51,10 +51,15 @@ This is a **chezmoi source directory**. Files here use special naming convention
 ├── dot_p10k.zsh           → ~/.p10k.zsh (Powerlevel10k theme)
 ├── Brewfile               → Package management (Homebrew)
 ├── .chezmoiignore         → Files chezmoi should not manage
+├── .chezmoiexternal.toml  → Clones the private cx-settings repo to ~/cx-settings
+├── dot_claude/            → ~/.claude/ (symlinks into ~/cx-settings)
 └── dot_config/
+    ├── cmux/              → ~/.config/cmux/ (cmux)
+    ├── git/               → ~/.config/git/ (global Git ignore for agent files)
     ├── nvim/              → ~/.config/nvim/ (Neovim/LazyVim)
     ├── lazygit/           → ~/.config/lazygit/ (LazyGit)
     ├── wezterm/           → ~/.config/wezterm/ (WezTerm terminal)
+    ├── zed/               → ~/.config/zed/ (Zed editor settings)
     └── zellij/            → ~/.config/zellij/ (Zellij multiplexer)
 ```
 
@@ -70,6 +75,12 @@ The zshrc includes:
 - Completion settings
 - Plugin loading (fzf, nvm, asdf, syntax highlighting, autosuggestions)
 - Functions (like `mkd` for mkdir+cd)
+
+### Claude Code (dot_claude/)
+
+The Claude Code setup (global `CLAUDE.md`, `settings.json`, status line, personal skills) lives in the private `cx-settings` repo, so it stays out of this public one. `.chezmoiexternal.toml` clones it to `~/cx-settings` once and never pulls, and `dot_claude/` holds only symlinks into that clone. Edit those files in `~/cx-settings` and commit there.
+
+Claude Code can replace the `~/.claude/settings.json` link with a plain file when it saves. `chezmoi status` then lists it: copy the file over `~/cx-settings/settings.json`, commit there, and `chezmoi apply ~/.claude/settings.json` to restore the link.
 
 ### Editor Setup
 

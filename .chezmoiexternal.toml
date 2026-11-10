@@ -1,0 +1,6 @@
+# Claude Code setup lives in a private repo so it stays out of this public one;
+# dot_claude/ only links into the clone. No refreshPeriod: chezmoi clones it once
+# and never pulls over local work, so update it with git like any other repo.
+["cx-settings"]
+    type = "git-repo"
+    url = "git@github.com:zedevs/cx-context.git"
