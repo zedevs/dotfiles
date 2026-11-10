@@ -68,9 +68,12 @@ chezmoi re-add ~/.zshrc
 ├── Brewfile               # Homebrew packages (brew bundle to install)
 ├── .chezmoiignore         # Files NOT managed by chezmoi
 └── dot_config/
+    ├── cmux/              # cmux config
+    ├── git/               # Global Git ignore for agent files
     ├── nvim/              # LazyVim configuration (goal: VSCode parity)
     ├── lazygit/           # LazyGit TUI config
     ├── wezterm/           # WezTerm terminal emulator config
+    ├── zed/               # Zed editor settings
     └── zellij/            # Zellij terminal multiplexer config
 ```
 

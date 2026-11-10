@@ -52,9 +52,12 @@ This is a **chezmoi source directory**. Files here use special naming convention
 ├── Brewfile               → Package management (Homebrew)
 ├── .chezmoiignore         → Files chezmoi should not manage
 └── dot_config/
+    ├── cmux/              → ~/.config/cmux/ (cmux)
+    ├── git/               → ~/.config/git/ (global Git ignore for agent files)
     ├── nvim/              → ~/.config/nvim/ (Neovim/LazyVim)
     ├── lazygit/           → ~/.config/lazygit/ (LazyGit)
     ├── wezterm/           → ~/.config/wezterm/ (WezTerm terminal)
+    ├── zed/               → ~/.config/zed/ (Zed editor settings)
     └── zellij/            → ~/.config/zellij/ (Zellij multiplexer)
 ```
 
